@@ -37,7 +37,7 @@ namespace TheConversation
             // set cursor invisible, background colors, foreground colors, and clear screen
             //
             Console.CursorVisible = false;
-            Console.BackgroundColor = ConsoleColor.Gray;
+            Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.Red;
             Console.Clear();
 
@@ -45,21 +45,21 @@ namespace TheConversation
             // display a opening screen information
             // 
             Console.WriteLine();
-            Console.WriteLine("\t\tThe Clown Car Calculator");
+            Console.WriteLine("\t\tThe Skier App");
             Console.WriteLine();
             Console.WriteLine("\tPress any key to continue.");
             Console.ReadKey();
 
             //
-            //      *******************************************
-            //      *   Information and Introduction Screen   *
-            //      *******************************************
+            //      ***************************
+            //      *   Introduction Screen   *
+            //      ***************************
             //
             // set cursor invisible, background colors, foreground colors, and clear screen
             //
             Console.CursorVisible = false;
-            Console.BackgroundColor = ConsoleColor.Gray;
-            Console.ForegroundColor = ConsoleColor.Red;
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.White;
             Console.Clear();
 
             //
@@ -86,6 +86,25 @@ namespace TheConversation
             userResponse = Console.ReadLine();
 
             //
+            // pause the app for the user
+            //
+            Console.WriteLine();
+            Console.WriteLine("\tPress any key to exit.");
+            Console.ReadKey();
+
+            //
+            //      **************************
+            //      *   Information Screen   *
+            //      **************************
+            //
+            // set cursor invisible, background colors, foreground colors, and clear screen
+            //
+            Console.CursorVisible = false;
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Clear();
+
+            //
             // get more information if the user is a skier
             //
             if (userResponse == "yes")
@@ -104,7 +123,7 @@ namespace TheConversation
                 //
                 Console.WriteLine();
                 Console.WriteLine("I am interested in what kind of skiing you do.");
-                Console.Write("Do you prefer \"downhill\" or \"back country\"?");
+                Console.Write("Do you prefer \"downhill\", \"cross country\", or \"back country\"?");
                 typeOfSkiing = Console.ReadLine();
 
                 //
@@ -123,6 +142,11 @@ namespace TheConversation
                     Console.WriteLine("I have downhill skied for most of my life, but gave it up last year.");
                     Console.WriteLine($"I hear the {favoriteArea} is a great place to ski {userName}.");
                 }
+                else if (typeOfSkiing == "cross country")
+                {
+                    Console.WriteLine("I spend some of my time cross country skiing.");
+                    Console.WriteLine($"I am not sure I have skied at {favoriteArea}. I will have to give it a try.");
+                }
                 else if (typeOfSkiing == "back country")
                 {
                     Console.WriteLine("I spend most of my time skiing now in back country.");
@@ -131,6 +155,7 @@ namespace TheConversation
                 else // user's response was not valid
                 {
                     Console.WriteLine("I am afraid I don't recognize that type of skiing.");
+                    Console.WriteLine($"But you say you can do that at {favoriteArea}, eh!");
                 }
 
                 //
@@ -140,10 +165,21 @@ namespace TheConversation
                 Console.WriteLine($"{userName}, it has been great getting learn more about your skiing interests.");
                 Console.WriteLine("Have a nice day.");
             }
-            else // user does not like to ski
+
+            //
+            // thank the user if the user is not a skier
+            //
+            else
             {
                 Console.WriteLine();
                 Console.WriteLine($"I am sorry you don't like skiing {userName}. It has been nice meeting you.");
+
+                //
+                // pause the app for the user
+                //
+                Console.WriteLine();
+                Console.WriteLine("\tPress any key to exit.");
+                Console.ReadKey();
             }
 
             //
@@ -154,15 +190,20 @@ namespace TheConversation
             // set cursor invisible, background colors, foreground colors, and clear screen
             //
             Console.CursorVisible = false;
-            Console.BackgroundColor = ConsoleColor.Gray;
+            Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.Red;
             Console.Clear();
 
             //
-            // display a closing screen
+            // display the closing screen information
             // 
             Console.WriteLine();
             Console.WriteLine("\t\tThank You for Your Interest in Our Application");
+            Console.WriteLine();
+
+            //
+            // pause the app for the user
+            //
             Console.WriteLine();
             Console.WriteLine("\tPress any key to exit.");
             Console.ReadKey();
