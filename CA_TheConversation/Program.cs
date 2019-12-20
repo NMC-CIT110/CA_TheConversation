@@ -9,7 +9,7 @@ namespace TheConversation
 
     // *************************************************************
     // Application:     The Conversation (Example Code)
-    // Author:          Velis, John E
+    // Author:          Velis, John E.
     // Description:     An application that has a conversation with the user
     //                  about skiing
     // Date Created:    5/20/2019
