@@ -28,6 +28,11 @@ namespace TheConversation
             string typeOfSkiing;
             string favoriteArea;
             string userResponse;
+            int age;
+            int averageHoursPerDay;
+            int averageDaysPerYear;
+            int yearsSkied;
+            int totalHoursSkied;
 
             //
             //      **********************
@@ -89,20 +94,8 @@ namespace TheConversation
             // pause the app for the user
             //
             Console.WriteLine();
-            Console.WriteLine("\tPress any key to exit.");
+            Console.WriteLine("\tPress any key to continue.");
             Console.ReadKey();
-
-            //
-            //      **************************
-            //      *   Information Screen   *
-            //      **************************
-            //
-            // set cursor invisible, background colors, foreground colors, and clear screen
-            //
-            Console.CursorVisible = false;
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.Clear();
 
             //
             // get more information if the user is a skier
@@ -110,10 +103,23 @@ namespace TheConversation
             if (userResponse == "yes")
             {
                 //
+                //      *****************************
+                //      *   Type of Skiing Screen   *
+                //      *****************************
+                //
+                // set cursor invisible, background colors, foreground colors, and clear screen
+                //
+                Console.CursorVisible = true;
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.Clear();
+
+                //
                 // get user's favorite ski
                 //
                 Console.WriteLine();
                 Console.WriteLine("Glad to hear you like skiing. It is one of my favorite sports!");
+                Console.WriteLine();
                 Console.Write("What is your favorite ski?");
                 favoriteSki = Console.ReadLine();
                 Console.WriteLine("So, {0}, you like {1} skis.", userName, favoriteSki);
@@ -150,13 +156,52 @@ namespace TheConversation
                 else if (typeOfSkiing == "back country")
                 {
                     Console.WriteLine("I spend most of my time skiing now in back country.");
-                    Console.WriteLine($"Well {userName}, I am not sure I have skied at {favoriteArea}. I will have to give it a try." );
+                    Console.WriteLine($"Well {userName}, I am not sure I have skied at {favoriteArea}. I will have to give it a try.");
                 }
                 else // user's response was not valid
                 {
                     Console.WriteLine("I am afraid I don't recognize that type of skiing.");
                     Console.WriteLine($"But you say you can do that at {favoriteArea}, eh!");
                 }
+
+                //
+                //      *******************************
+                //      *   Skiing Frequency Screen   *
+                //      *******************************
+                //
+                // set cursor invisible, background colors, foreground colors, and clear screen
+                //
+                Console.CursorVisible = true;
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.Clear();
+
+                //
+                // query the user for information
+                //
+                Console.WriteLine("I would like to learn more about how much you ski.");
+                Console.WriteLine();
+
+                Console.Write("How many years have you skied?");
+                userResponse = Console.ReadLine();
+                yearsSkied = int.Parse(userResponse);
+                Console.WriteLine();
+
+                Console.Write("How many days on average do you ski in a year?");
+                userResponse = Console.ReadLine();
+                averageDaysPerYear = int.Parse(userResponse);
+                Console.WriteLine();
+
+                Console.Write("How many hours on average do you ski in a day?");
+                userResponse = Console.ReadLine();
+                averageHoursPerDay = int.Parse(userResponse);
+                Console.WriteLine();
+
+                totalHoursSkied = yearsSkied * averageDaysPerYear * averageHoursPerDay;
+
+                Console.WriteLine($"Well {userName}, from my calculations it appears you have skied {totalHoursSkied} hours in your lifetime.");
+                Console.WriteLine("Not bad!");
+                Console.WriteLine();
 
                 //
                 // thank the user and say good bye
@@ -171,6 +216,17 @@ namespace TheConversation
             //
             else
             {
+                //
+                //      *****************************
+                //      *     Thank User Screen     *
+                //      *****************************
+                //
+                // set cursor invisible, background colors, foreground colors, and clear screen
+                //
+                Console.CursorVisible = true;
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.Clear();
                 Console.WriteLine();
                 Console.WriteLine($"I am sorry you don't like skiing {userName}. It has been nice meeting you.");
 
