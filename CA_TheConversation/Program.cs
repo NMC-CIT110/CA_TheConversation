@@ -28,7 +28,7 @@ namespace TheConversation
             string typeOfSkiing;
             string favoriteArea;
             string userResponse;
-            int age;
+
             int averageHoursPerDay;
             int averageDaysPerYear;
             int yearsSkied;
@@ -62,10 +62,17 @@ namespace TheConversation
             //
             // set cursor invisible, background colors, foreground colors, and clear screen
             //
-            Console.CursorVisible = false;
+            Console.CursorVisible = true;
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.White;
             Console.Clear();
+
+            //
+            // display header
+            //
+            Console.WriteLine();
+            Console.WriteLine("\t\tIntroduction");
+            Console.WriteLine();
 
             //
             // enter conversation with user
@@ -115,6 +122,13 @@ namespace TheConversation
                 Console.Clear();
 
                 //
+                // display header
+                //
+                Console.WriteLine();
+                Console.WriteLine("\t\tType of Skiing");
+                Console.WriteLine();
+
+                //
                 // get user's favorite ski
                 //
                 Console.WriteLine();
@@ -136,7 +150,7 @@ namespace TheConversation
                 // get the user's favorite area
                 //
                 Console.WriteLine();
-                Console.Write("What is your favorite area to ski.");
+                Console.Write("What is your favorite area to ski?");
                 favoriteArea = Console.ReadLine();
 
                 //
@@ -165,6 +179,13 @@ namespace TheConversation
                 }
 
                 //
+                // pause the app for the user
+                //
+                Console.WriteLine();
+                Console.WriteLine("\tPress any key to continue.");
+                Console.ReadKey();
+
+                //
                 //      *******************************
                 //      *   Skiing Frequency Screen   *
                 //      *******************************
@@ -175,6 +196,13 @@ namespace TheConversation
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.Clear();
+
+                //
+                // display header
+                //
+                Console.WriteLine();
+                Console.WriteLine("\t\tAmount of Skiing");
+                Console.WriteLine();
 
                 //
                 // query the user for information
@@ -209,6 +237,13 @@ namespace TheConversation
                 Console.WriteLine();
                 Console.WriteLine($"{userName}, it has been great getting learn more about your skiing interests.");
                 Console.WriteLine("Have a nice day.");
+
+                //
+                // pause the app for the user
+                //
+                Console.WriteLine();
+                Console.WriteLine("\tPress any key to exit.");
+                Console.ReadKey();
             }
 
             //
@@ -255,6 +290,8 @@ namespace TheConversation
             // 
             Console.WriteLine();
             Console.WriteLine("\t\tThank You for Your Interest in Our Application");
+            Console.WriteLine();
+            Console.WriteLine("\t\t\tClown Car Productions");
             Console.WriteLine();
 
             //
